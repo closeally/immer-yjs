@@ -6,10 +6,10 @@
         "packages/*"
     ],
     "scripts": {
-        "build": "yarn workspace immer-yjs build",
-        "test": "yarn workspace immer-yjs test",
-        "publish": "yarn workspace immer-yjs npm publish",
-        "release": "yarn workspace immer-yjs release",
+        "build": "yarn workspace @closeally/immer-yjs build",
+        "test": "yarn workspace @closeally/immer-yjs test",
+        "publish": "yarn workspace @closeally/immer-yjs npm publish",
+        "release": "yarn workspace @closeally/immer-yjs release",
         "lint": "eslint --ext .js,.ts --ignore-path .gitignore --fix packages",
         "format": "prettier . --write"
     },
@@ -25,5 +25,5 @@
         "prettier": "^2.5.1",
         "vite": "^2.8.4"
     },
-    "packageManager": "yarn@3.2.0"
+    "packageManager": "yarn@4.0.0-rc.14"
 }

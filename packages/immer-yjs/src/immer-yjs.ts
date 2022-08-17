@@ -1,12 +1,12 @@
 import produce, { enablePatches, Patch, produceWithPatches } from 'immer'
 import * as Y from 'yjs'
 
-import { JSONArray, JSONObject, JSONValue } from './types'
+import { JSONValue } from './types'
 import { isJSONArray, isJSONObject, notImplemented, toPlainValue, toYDataType } from './util'
 
 enablePatches()
 
-export type Snapshot = JSONObject | JSONArray
+export type Snapshot = unknown
 
 function applyYEvent<T extends JSONValue>(base: T, event: Y.YEvent<any>) {
     if (event instanceof Y.YMapEvent && isJSONObject(base)) {
@@ -49,12 +49,16 @@ function applyYEvent<T extends JSONValue>(base: T, event: Y.YEvent<any>) {
 function applyYEvents<S extends Snapshot>(snapshot: S, events: Y.YEvent<any>[]) {
     return produce(snapshot, (target) => {
         for (const event of events) {
+            if (event instanceof Y.YXmlEvent || event instanceof Y.YTextEvent) {
+                continue
+            }
+
             const base = event.path.reduce((obj, step) => {
                 // @ts-ignore
                 return obj[step]
             }, target)
 
-            applyYEvent(base, event)
+            applyYEvent(base as unknown as JSONValue, event)
         }
     })
 }

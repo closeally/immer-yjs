@@ -4,7 +4,7 @@ import { JSONArray, JSONObject, JSONPrimitive, JSONValue } from './types'
 
 export function isJSONPrimitive(v: JSONValue): v is JSONPrimitive {
     const t = typeof v
-    return t === 'string' || t === 'number' || t === 'boolean' || t === null
+    return t === 'string' || t === 'number' || t === 'boolean' || v === null
 }
 
 export function isJSONArray(v: JSONValue): v is JSONArray {
@@ -22,6 +22,8 @@ export function toYDataType(v: JSONValue) {
         const arr = new Y.Array()
         applyJsonArray(arr, v)
         return arr
+    } else if (v instanceof Y.XmlFragment || v instanceof Y.XmlText || v instanceof Y.XmlElement) {
+        return v
     } else if (isJSONObject(v)) {
         const map = new Y.Map()
         applyJsonObject(map, v)
