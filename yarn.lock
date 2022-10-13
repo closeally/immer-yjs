@@ -36,16 +36,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@closeally/immer-yjs@workspace:packages/immer-yjs"
   dependencies:
-    immer: "npm:^9.0.12"
+    immer: "npm:^9.0.15"
     standard-version: "npm:^9.3.2"
-    typescript: "npm:^4.6.3"
+    typescript: "npm:^4.8.4"
     vite: "npm:^2.9.6"
     vite-dts: "npm:^1.0.4"
     vitest: "npm:^0.10.0"
-    yjs: "npm:^13.5.35"
+    yjs: "npm:^14.0.0-0"
   peerDependencies:
-    immer: ^9.0.12
-    yjs: ^13.5.35
+    immer: ^9.0.15
+    yjs: ^14.0.0-0
   languageName: unknown
   linkType: soft
 
@@ -2409,10 +2409,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"immer@npm:^9.0.12":
-  version: 9.0.12
-  resolution: "immer@npm:9.0.12"
-  checksum: 1726c3fbe4738b29086d7e857ac424f85af6d48401ec2240987783c8e21f7b22fb0bc03ee229c8bcf65964348d01bbba6580be763fe4fa524a96a33853879b24
+"immer@npm:^9.0.15":
+  version: 9.0.15
+  resolution: "immer@npm:9.0.15"
+  checksum: 1805963014da1349a7164066692f2246a634e3197d7e48b3d33bb88447b4841d7c314ef414bb0059e83d46bd883b39add2a8d96dff40a54943d2ba8000ba109d
   languageName: node
   linkType: hard
 
@@ -2769,12 +2769,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lib0@npm:^0.2.49":
-  version: 0.2.51
-  resolution: "lib0@npm:0.2.51"
+"lib0@npm:^0.2.43":
+  version: 0.2.52
+  resolution: "lib0@npm:0.2.52"
   dependencies:
     isomorphic.js: "npm:^0.2.4"
-  checksum: 04bdf9c6375725d36e2d6bc2ba03fb33c265e99f4cf5639ee24522c6541078f1e0c22a6df9ff2113cb773a889ae7d37f10e7a6734e8165384424e5e22c11fe04
+  checksum: 082ce3e40bd42143a0eb3ab7fb643a4f1dde02f0c4fd2f119e6d643f7b9170623f9d9a6a775fb0a54cd5cc4eee58fd847b73314cb6b1e430b6d9c9c164d1d819
   languageName: node
   linkType: hard
 
@@ -4277,19 +4277,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.6.3":
-  version: 4.6.3
-  resolution: "typescript@npm:4.6.3"
+"typescript@npm:^4.8.4":
+  version: 4.8.4
+  resolution: "typescript@npm:4.8.4"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 6d79afd83b60614b18d469795c0d5725dcc89d8c943b0b09162ce15e1ec7cd73111642accdbb10c2be21bfabccb5b296554b5ea09948b2931d51ecbdece22a48
+  checksum: 008c336ed785130b6e13254adbfc4084f5dbbe62851df9bac3eaf62fc29e0a396839c00ce47e0d92db44fa9a08b9f7ba4d31304f2b10cf7d42a0817728e822a1
   languageName: node
   linkType: hard
 
 "typescript@patch:typescript@npm%3A*#optional!builtin<compat/typescript>":
   version: 4.6.2
-  resolution: "typescript@patch:typescript@npm%3A4.6.2#optional!builtin<compat/typescript>::version=4.6.2&hash=f456af"
+  resolution: "typescript@patch:typescript@npm%3A4.6.2#optional!builtin<compat/typescript>::version=4.6.2&hash=701156"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
@@ -4297,13 +4297,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^4.6.3#optional!builtin<compat/typescript>":
-  version: 4.6.3
-  resolution: "typescript@patch:typescript@npm%3A4.6.3#optional!builtin<compat/typescript>::version=4.6.3&hash=f456af"
+"typescript@patch:typescript@npm%3A^4.8.4#optional!builtin<compat/typescript>":
+  version: 4.8.4
+  resolution: "typescript@patch:typescript@npm%3A4.8.4#optional!builtin<compat/typescript>::version=4.8.4&hash=701156"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 694ec10096afa6f172ffeb1b3794bbf4a354f9d59af4f1ac62d4a705a4cdc708f970514deaf7d9a87c7ecdc4b1f5d297ce89ecbde720a251caac801adf5588f6
+  checksum: 72574875bac1c13aec22010780d4841a10a88342d73744dbbad538bb0ed601f2024187f197239f2dcbf2442f83ecc4de04a80941d49730c403969fbba035ed81
   languageName: node
   linkType: hard
 
@@ -4587,12 +4587,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yjs@npm:^13.5.35":
-  version: 13.5.35
-  resolution: "yjs@npm:13.5.35"
+"yjs@npm:^14.0.0-0":
+  version: 14.0.0-0
+  resolution: "yjs@npm:14.0.0-0"
   dependencies:
-    lib0: "npm:^0.2.49"
-  checksum: b657a164327946ea4c6eceffcb964a460ee6205d0b981bdc5e9e7bfc2dc286cf2ca62c9f207e6138def6f9231c3f8d2a8e21fae291edca1e1aeeb1b2931b6699
+    lib0: "npm:^0.2.43"
+  checksum: 11f6191fe8b0b91ad26c064c8a53d42bff3bb5d1bee0d9ba45ed43407c182bb11148cc03cc9e257fc34648805e865abf9eb02b4d9986855a52828889ac7cbd4b
   languageName: node
   linkType: hard
 

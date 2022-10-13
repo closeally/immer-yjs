@@ -8,7 +8,7 @@ enablePatches()
 
 export type Snapshot = unknown
 
-function applyYEvent<T extends JSONValue>(base: T, event: Y.YEvent<any>) {
+function applyYEvent<T extends JSONValue>(base: T, event: Y.YEvent) {
     if (event instanceof Y.YMapEvent && isJSONObject(base)) {
         const source = event.target as Y.Map<any>
 
@@ -46,7 +46,7 @@ function applyYEvent<T extends JSONValue>(base: T, event: Y.YEvent<any>) {
     }
 }
 
-function applyYEvents<S extends Snapshot>(snapshot: S, events: Y.YEvent<any>[]) {
+function applyYEvents<S extends Snapshot>(snapshot: S, events: Y.YEvent[]) {
     return produce(snapshot, (target) => {
         for (const event of events) {
             if (event instanceof Y.YXmlEvent || event instanceof Y.YTextEvent) {
@@ -78,7 +78,7 @@ function defaultApplyPatch(target: Y.Map<any> | Y.Array<any>, patch: Patch) {
         if (target instanceof Y.Map && isJSONObject(value)) {
             target.clear()
             for (const k in value) {
-                target.set(k, toYDataType(value[k]))
+                target.set(k, toYDataType(value[k] as JSONValue))
             }
         } else if (target instanceof Y.Array && isJSONArray(value)) {
             target.delete(0, target.length)
@@ -196,7 +196,7 @@ export function bind<S extends Snapshot>(source: Y.Map<any> | Y.Array<any>, opti
         return () => void subscription.delete(fn)
     }
 
-    const observer = (events: Y.YEvent<any>[]) => {
+    const observer = (events: Y.YEvent[]) => {
         snapshot = applyYEvents(get(), events)
         subscription.forEach((fn) => fn(get()))
     }
